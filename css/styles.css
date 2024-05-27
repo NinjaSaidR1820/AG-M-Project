@@ -908,8 +908,8 @@ footer .follow i:hover, footer a:hover {
 }
 
 #form-details .people div img{
-    width: 65px;
-    height: 65px;
+    width: 120px;
+    height: 160px;
     object-fit: cover;
     margin-right: 15px;
 }
