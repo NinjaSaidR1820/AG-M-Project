@@ -31,14 +31,12 @@
         </div>
     </section>
 
-    <section id="page-header" class = "about-header">
+    <section id="page-header" class="about-header">
         <h2>#let´s buy</h2>
-
         <p>Here you can buy our products online</p>
-
     </section>
 
-    <section id = "cart" class="">
+    <section id="cart" class="">
         <table width="100%">
             <thead>
                 <tr>
@@ -53,40 +51,26 @@
             <tbody>
                 <tr>
                     <td><a href="#"></a><i class="far fa-times-circle"></i></td>
-                    <td><img src ="/images/Products/p1.webp" alt =""></td>
+                    <td><img src="/images/Products/p1.webp" alt=""></td>
                     <td>Pulpa de Cafe</td>
                     <td>$12</td>
-                    <td><input type="number" value="1"></td>
+                    <td><input type="number" value="1" onchange="updateSubtotal(this)"></td>
                     <td>$12</td>
                 </tr>
                 <tr>
                     <td><a href="#"></a><i class="far fa-times-circle"></i></td>
-                    <td><img src ="/images/Products/p12.webp" alt =""></td>
-                    <td>Reserva Especial - Tueste Especial</td>
-                    <td>$14</td>
-                    <td><input type="number" value="3"></td>
-                    <td>$42</td>
+                    <td><img src="/images/Products/p3.webp" alt=""></td>
+                    <td>Hot Cakes with Banana</td>
+                    <td>$10</td>
+                    <td><input type="number" value="1" onchange="updateSubtotal(this)"></td>
+                    <td>$10</td>
                 </tr>
-                <tr>
-                    <td><a href="#"></a><i class="far fa-times-circle"></i></td>
-                    <td><img src ="/images/Products/p11.webp" alt =""></td>
-                    <td>Coffee Bag Pack Ometepe & Coffe Cup Specia Edition</td>
-                    <td>$22</td>
-                    <td><input type="number" value="1"></td>
-                    <td>$22</td>
-                </tr> <tr>
-                    <td><a href="#"></a><i class="far fa-times-circle"></i></td>
-                    <td><img src ="/images/Products/p4.jpg" alt =""></td>
-                    <td>Cappuccino</td>
-                    <td>$07</td>
-                    <td><input type="number" value="3"></td>
-                    <td>$21</td>
-                </tr>
+                <!-- Agregar más filas aquí -->
             </tbody>
         </table>
     </section>
 
-    <section id = "cart-add" class="section-p1">
+    <section id="cart-add" class="section-p1">
         <div id="coupon">
             <h3>Apply Coupon</h3>
             <div>
@@ -100,7 +84,7 @@
             <table>
                 <tr>
                     <td>Cart Subtotal</td>
-                    <td>$ 97</td>
+                    <td id="cart-subtotal">$ 0</td>
                 </tr>
                 <tr>
                     <td>Shipping</td>
@@ -108,11 +92,12 @@
                 </tr>
                 <tr>
                     <td>IVA</td>
-                    <td>$14.55</td>
+                    <td id="cart-iva">$0</td>
                 </tr>
+                
                 <tr>
                     <td><strong>Total</strong></td>
-                    <td><strong>$111.55</strong></td>
+                    <td id="cart-total"><strong>$0</strong></td>
                 </tr>
             </table>
             <button class="normal">Proceed to checkout</button>
@@ -177,11 +162,7 @@
         </div>
 
     </footer>
-
-
     <script src="/js/script.js"></script>
+    <script src="/js/scriptCart.js"></script>
 </body>
-
 </html>
-
-<!--Mondongo 4-->
