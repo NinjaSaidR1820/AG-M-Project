@@ -20,7 +20,6 @@
         <div>
             <ul id="navbar">
                 <li><a class="active" href="#">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -92,7 +91,8 @@
         <p>Best Coffe - Desserts - Gastronomy</p>
 
         <div class="pro-container">
-            <div class="pro">
+            <!-- Dentro de cada producto, agregar data-id -->
+            <div class="pro" data-id="1">
                 <img src="images/Products/p1.webp" alt="">
                 <div class="des">
                     <span>Infusiones</span>
@@ -104,10 +104,13 @@
                         <i class="fas fa-star"></i>
                     </div>
                 </div>
-                <a href="cart.html"><i class="fal fa-shopping-cart cart"></i></a>
+                <button onclick="addToCart(1, 'Pulpa de Cafe', 12, 'images/Products/p1.webp')"><i
+                        class="fal fa-shopping-cart cart"></i></button>
             </div>
 
-            <div class="pro">
+
+            <!-- Dentro de cada producto, agregar data-id -->
+            <div class="pro" data-id="2">
                 <img src="images/Products/p2.jpg" alt="">
                 <div class="des">
                     <span>Wines</span>
@@ -120,26 +123,27 @@
                         <i class="fas fa-star"></i>
                     </div>
                 </div>
-                <a href="cart.html"><i class="fal fa-shopping-cart cart"></i></a>
+                <button onclick="addToCart(2, 'Coffee Wine', 15, 'images/Products/p2.jpg')"><i class="fal fa-shopping-cart cart"></i></button>
             </div>
 
-            <div class="pro">
+
+            <div class="pro" data-id="3">
                 <img src="images/Products/p3.webp" alt="">
                 <div class="des">
                     <span>Breakfast</span>
-                    <h5>Hot Cakes with Bananas</h5>
+                    <h5>Hot Cakes With Banana</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half"></i>
+                        <i class="fas fa-star"></i>
                     </div>
                 </div>
-                <a href="cart.html"><i class="fal fa-shopping-cart cart"></i></a>
+                <button onclick="addToCart(3, 'Hot Cakes With Banana', 10, 'images/Products/p3.webp')"><i class="fal fa-shopping-cart cart"></i></button>
             </div>
 
-            <div class="pro">
+            <div class="pro" data-id="4">
                 <img src="images/Products/p4.jpg" alt="">
                 <div class="des">
                     <span>Hot Coffee</span>
@@ -150,30 +154,28 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-
                     </div>
                 </div>
-                <a href="cart.html"><i class="fal fa-shopping-cart cart"></i></a>
+                <button onclick="addToCart(4, 'Cappuccino', 8, 'images/Products/p4.jpg')"><i class="fal fa-shopping-cart cart"></i></button>
             </div>
-
-            <div class="pro">
+            
+            <div class="pro" data-id="5">
                 <img src="images/Products/p5.webp" alt="">
                 <div class="des">
                     <span>Coffee Bag (Special reserve)</span>
-                    <h5>House Blend </h5>
+                    <h5>House Blend</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-
                     </div>
                 </div>
-                <a href="cart.html"><i class="fal fa-shopping-cart cart"></i></a>
+                <button onclick="addToCart(5, 'House Blend', 20, 'images/Products/p5.webp')"><i class="fal fa-shopping-cart cart"></i></button>
             </div>
-
-            <div class="pro">
+            
+            <div class="pro" data-id="6">
                 <img src="images/Products/p6.webp" alt="">
                 <div class="des">
                     <span>Coffee Bag (Special reserve)</span>
@@ -186,10 +188,11 @@
                         <i class="fas fa-star-half"></i>
                     </div>
                 </div>
-                <a href="cart.html"><i class="fal fa-shopping-cart cart"></i></a>
+                <button onclick="addToCart(6, 'Catual Amarillo', 18, 'images/Products/p6.webp')"><i class="fal fa-shopping-cart cart"></i></button>
             </div>
+            
 
-            <div class="pro">
+            <div class="pro" data-id="7">
                 <img src="images/Products/p7.webp" alt="">
                 <div class="des">
                     <span>Coffee Bag </span>
@@ -199,12 +202,13 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
                     </div>
                 </div>
-                <a href="cart.html"><i class="fal fa-shopping-cart cart"></i></a>
+                <button onclick="addToCart(7, 'Cacao Criollo', 15, 'images/Products/p7.webp')"><i class="fal fa-shopping-cart cart"></i></button>
             </div>
 
-            <div class="pro">
+            <div class="pro" data-id="8">
                 <img src="images/Products/p8.webp" alt="">
                 <div class="des">
                     <span>Iced Coffee</span>
@@ -217,7 +221,7 @@
                         <i class="fas fa-star-half"></i>
                     </div>
                 </div>
-                <a href="cart.html"><i class="fal fa-shopping-cart cart"></i></a>
+                <button onclick="addToCart(8, 'Iced Coffee', 4, 'images/Products/p8.webp')"><i class="fal fa-shopping-cart cart"></i></button>
             </div>
 
 
@@ -317,7 +321,7 @@
             </div>
 
             <div class="pro">
-                <img src="images/Products/p14.webp" alt="">
+                <img src="images/Products/p14.webp" alt="" onclick="window.location.href='sproduct.html';">
                 <div class="des">
                     <span>Coffee Bag</span>
                     <h5>Cerro Negro</h5>
@@ -400,6 +404,11 @@
         </div>
     </section>
 
+    <div id="cart-notification" class="cart-notification">
+        <p id="cart-message"></p>
+        <button id="close-notification"><i class="far fa-times"></i></button>
+    </div>
+
     <section id="newsletter" class="section-p1 section-m1">
         <div class="newstext">
             <h4>Sign Up For Newsletters</h4>
@@ -450,7 +459,7 @@
             <img src="/images/Pays/pay.png" alt="">
 
         </div>
-        
+
         <div class="copyright">
             <a href="#">
                 <p>Copyright © 2024 by NinjaSaidR1820 All Rights Reserved</p>
@@ -461,6 +470,8 @@
 
 
     <script src="/js/script.js"></script>
+    <script src="/js/scriptAddCart.js"></script>
+
 </body>
 
 </html>
