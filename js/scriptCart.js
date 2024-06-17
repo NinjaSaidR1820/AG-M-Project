@@ -1,33 +1,77 @@
-function updateSubtotal(input) {
-    // Validar si el valor ingresado es un número positivo
-    let quantity = parseInt(input.value);
-    if (isNaN(quantity) || quantity <= 0) {
-        input.value = 1; // Restablecer el valor a 1 si no es un número o es negativo
-        quantity = 1;
-    }
+// Función para cargar el carrito desde localStorage y mostrar los elementos en la tabla
+function loadCart() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartItems = document.getElementById('cart-items');
+    let subtotal = 0;
 
-    const price = parseFloat(input.parentNode.previousElementSibling.textContent.slice(1)); // Obtener el precio del producto
-    const subtotal = price * quantity; // Calcular el subtotal
-    input.parentNode.nextElementSibling.textContent = `$${subtotal.toFixed(2)}`; // Actualizar el subtotal en la tabla
+    // Limpiar el contenido previo
+    cartItems.innerHTML = '';
 
-    updateCartTotal(); // Llamar a la función para actualizar el total del carrito
-}
+    cart.forEach(item => {
+        let itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
 
-function updateCartTotal() {
-    const cartItems = document.querySelectorAll("#cart tbody tr"); // Obtener todas las filas de productos en el carrito
-    let subtotal = 0; // Inicializar el subtotal del carrito
-
-    // Calcular el subtotal sumando los subtotales de todos los productos en el carrito
-    cartItems.forEach(item => {
-        subtotal += parseFloat(item.querySelector("td:nth-child(6)").textContent.slice(1));
+        // Crear una nueva fila para cada artículo en el carrito
+        let row = document.createElement('tr');
+        row.innerHTML = `
+            <td><button onclick="removeFromCart(${item.id})"><i class="fas fa-trash-alt"></i></button></td>
+            <td><img src="${item.image}" alt=""></td>
+            <td>${item.name}</td>
+            <td>$${item.price.toFixed(2)}</td>
+            <td><input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${item.id}, this.value)"></td>
+            <td>$${itemTotal.toFixed(2)}</td>
+        `;
+        cartItems.appendChild(row);
     });
 
-    const shipping = 0; // Definir el costo de envío (en este caso, 0)
-    const iva = subtotal * 0.15; // Calcular el IVA (15% del subtotal)
-    const total = subtotal + shipping + iva; // Calcular el total sumando el subtotal, el costo de envío y el IVA
-
-    // Actualizar los elementos HTML que muestran el subtotal, el IVA y el total del carrito
-    document.getElementById("cart-subtotal").textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById("cart-iva").textContent = `$${iva.toFixed(2)}`; // Actualizar el IVA
-    document.getElementById("cart-total").innerHTML = `<strong>$${total.toFixed(2)}</strong>`;
+    updateCartTotal(subtotal); // Actualizar subtotal, IVA y total del carrito
 }
+
+// Función para eliminar un elemento del carrito
+function removeFromCart(id) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let updatedCart = cart.filter(item => item.id !== id); // Filtrar todos los elementos excepto el que se quiere eliminar
+
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    loadCart(); // Volver a cargar el carrito después de eliminar un elemento
+
+    // Mostrar notificación de producto eliminado
+    const notification = document.createElement('div');
+    notification.className = 'remove-notification';
+    notification.textContent = 'Product removed from cart';
+    document.body.appendChild(notification);
+
+    // Eliminar la notificación después de unos segundos
+    setTimeout(function() {
+        notification.remove();
+    }, 3000); // Notificación visible por 3 segundos
+}
+
+// Función para actualizar la cantidad de un producto en el carrito
+function updateQuantity(id, quantity) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let product = cart.find(item => item.id === id);
+    if (product) {
+        product.quantity = parseInt(quantity);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCart(); // Volver a cargar el carrito después de actualizar la cantidad
+    }
+
+    // Validar y ajustar valores de cantidad
+}
+
+// Función para actualizar el total del carrito (subtotal, IVA y total)
+function updateCartTotal(subtotal) {
+    let iva = subtotal * 0.16; // Calculamos el IVA al 16%
+    let total = subtotal + iva; // Sumamos el subtotal más el IVA
+
+    // Actualizar los elementos en el DOM
+    document.getElementById('cart-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+    document.getElementById('cart-iva').textContent = `$${iva.toFixed(2)}`;
+    document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
+}
+
+// Evento para cargar el carrito cuando se carga la página
+document.addEventListener('DOMContentLoaded', function() {
+    loadCart();
+});

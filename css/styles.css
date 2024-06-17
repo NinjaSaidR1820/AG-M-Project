@@ -605,6 +605,51 @@ footer .follow i:hover, footer a:hover {
     color: #088178
 }
 
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none; /* No permite interacción hasta que se haga visible */
+}
+
+.cart-notification.show {
+    opacity: 1; /* Hacer visible cuando tiene la clase .show */
+    pointer-events: auto; /* Permitir interacción */
+}
+
+
+.remove-notification {
+    position: fixed;
+    top: 20px; /* Cambiado a top para que aparezca en la parte superior */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    animation: fadeOut 3s ease; /* Cambiado a fadeOut */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+
 
 /* Shop Page */
 
@@ -1050,6 +1095,19 @@ footer .follow i:hover, footer a:hover {
 #cart table tbody td{
     font-size: 13px;
 }
+
+#cart td button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1.7em; /* Ajusta el tamaño del ícono según sea necesario */
+    color: #dc3545; /* Color rojo para el ícono de remover */
+}
+
+#cart td button:hover {
+    color: #721c24; /* Cambia el color al hacer hover */
+}
+
 
 #cart-add{
     display: flex;
