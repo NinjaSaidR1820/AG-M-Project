@@ -450,7 +450,6 @@ body {
     font-size: 15px;
 }
 #search-bar {
-
     padding: 10px 20px;
     border-radius: 20px;
     margin-top: 20px;
@@ -461,20 +460,21 @@ body {
 .search-container {
     display: flex;
     align-items: center;
-    background-color: #f3e2d3;
+    background-color: #fff;
     border-radius: 20px;
     padding: 5px 10px; /* Ajustar padding para tamaño más pequeño */
 }
 
 #search-input {
     width: 0;
-    padding: 5px; /* Ajustar padding para tamaño más pequeño */
+    padding: 3px; /* Ajustar padding para tamaño más pequeño */
     border: none;
     background-color: transparent;
     transition: width 0.4s ease;
     font-size: 14px; /* Tamaño de fuente más pequeño */
     border-radius: 20px;
     outline: none;
+    
 }
 
 #search-icon {
