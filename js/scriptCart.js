@@ -63,15 +63,34 @@ function updateQuantity(id, quantity) {
 // Función para actualizar el total del carrito (subtotal, IVA y total)
 function updateCartTotal(subtotal) {
     let iva = subtotal * 0.16; // Calculamos el IVA al 16%
-    let total = subtotal + iva; // Sumamos el subtotal más el IVA
+    let service = 2.5;
+    let total = subtotal + service + iva; // Sumamos el subtotal más el IVA
 
     // Actualizar los elementos en el DOM
     document.getElementById('cart-subtotal').textContent = `$${subtotal.toFixed(2)}`;
     document.getElementById('cart-iva').textContent = `$${iva.toFixed(2)}`;
+    document.getElementById('cart-shipping').textContent = `$${service.toFixed(2)}`;
     document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
 }
+
 
 // Evento para cargar el carrito cuando se carga la página
 document.addEventListener('DOMContentLoaded', function() {
     loadCart();
 });
+
+// Mensaje de Hecho al momento de realizar el pago
+
+function mostrar()
+{
+    sweetAlert('', '¡Hola¡ Se han enviado los datos de tu pedido', 'success')
+}
+
+// Limpiar tablas
+function emptyCart() {
+    localStorage.removeItem('cart'); // Eliminar el carrito de localStorage
+    let cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = ''; // Limpiar el contenido de la tabla
+
+    updateCartTotal(0); // Actualizar los totales a 0
+}
