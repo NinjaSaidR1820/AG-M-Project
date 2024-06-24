@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/Logo.webp" type="image/png">
+    <link rel="shortcut icon" href="/images/Logo.webp" type="image/png">
+
     <title>De La Finca | Cart</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
     
 </head>
@@ -16,7 +20,7 @@
         <div>
             <ul id="navbar">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li id="lg-bag"><a class="active" href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
@@ -58,7 +62,26 @@
             <div>
                 <input type="text" placeholder="Enter Your Coupon">
                 <button class="normal">Apply</button>
+
+                <div id="form">
+                    <h3>Payment Order </h3>
+                    <form id="formulario" action="https://formsubmit.co/oscargggarcia230105@gmail.com" method="POST">
+        
+                        <input type="text" placeholder="Name" name="nombre" id="">
+                        <input type="text" placeholder="Card number" name="email" id="">
+                        <input type="text" placeholder="Card expiration date" name="Card expiration date" id="">
+                        <input type="text" placeholder="CVC" name="Cvc" id="">
+        
+                        <div>
+                            <button onclick="mostrar()" type="">Send</button>
+                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/cart.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        </div>
+
+                    </form>
+                </div>
             </div>
+
         </div>
     
         <div id="subtotal">
@@ -69,23 +92,31 @@
                     <td id="cart-subtotal">$0</td>
                 </tr>
                 <tr>
-                    <td>Shipping</td>
-                    <td>Free</td>
-                </tr>
-                <tr>
                     <td>IVA</td>
                     <td id="cart-iva">$0</td>
+                </tr>
+                <tr>
+                    <td>Service charge</td>
+                    <td id="cart-shipping">$2.5</td>
+                </tr>
+                <tr>
+                    <td>Delivery</td>
+                    <td>Free</td>
                 </tr>
                 <tr>
                     <td><strong>Total</strong></td>
                     <td id="cart-total"><strong>$0</strong></td>
                 </tr>
             </table>
-            <button class="normal">Proceed to checkout</button>
+            
+            <div class="cart-option">
+                <a href="delivery.html"><button >Delivery</button></a>
+                <a href="Dinein.html"><button>Dine-in</button></a>
+            </div>
+
         </div>
     </section>
     
-
     <section id="newsletter" class="section-p1 section-m1">
         <div class="newstext">
             <h4>Sign Up For Newsletters</h4>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/Logo.webp" type="image/png">
+    <link rel="shortcut icon" href="/images/Logo.webp" type="image/png">
+
+    <title>De La Finca | Cart</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/Dinein.css">
+    
+</head>
+
+<body>
+    <section id="header">
+        <a href="index.html"><img src="/images/Logo.webp" class="logo" alt="" style="width: 80px;"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="lg-bag"><a class="active" href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+    <section id="registration">
+        <div class="reminder">
+            <div class="form">
+                <h3>Rellena la información del local</h3>
+                <form class="formulario" action="https://formsubmit.co/oscargggarcia230105@gmail.com" method="POST">
+
+                    <label for="options">Choose a local:</label>
+                    <select id="options" name="options">
+                        <option name="Local">Metrocentro</option>
+                        <option name="Local">El Dorado</option>
+                        <option name="Local">Camino de Oriente</option>
+                        <option name="Local">Galeria Santo Domingo</option>
+                    </select>
+
+                    <label for="options" style="color: #000">Hour:</label>
+                    <select id="options" name="Hora">
+                        <option name="Hora">8am-10am</option>
+                        <option name="Hora">10am-12am</option>
+                        <option name="Hora">12md-2pm</option>
+                        <option name="Hora">2pm-4pm</option>
+                        <option name="Hora">4pm-6pm</option>
+                    </select>
+                    
+                    <div class="btn">
+                        <button onclick="mostrar(), emptyCart()" class="green" type="submit">Enviar</button>
+                    </div>
+
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/cart.html">
+                    <input type="hidden" name="_captcha" value="false">
+
+                </form>
+            </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 562 Wellington Road, Street 32, San Francisco</p>
+            <p><strong>Phone:</strong> +01 2222 365 /(+91) 01 2345 6789</p>
+            <p><strong>Hours:</strong> 10:00 18:00, Mon Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Polity</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">Track My Orders</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <p>Secured Payment Gateways</p>
+            <img src="/images/Pays/pay.png" alt="">
+
+        </div>
+
+        <div class="copyright">
+            <a href="#">
+                <p>Copyright © 2024 by NinjaSaidR1820 All Rights Reserved</p>
+            </a>
+        </div>
+
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/scriptCart.js"></script>
+</body>
+
+</html>
