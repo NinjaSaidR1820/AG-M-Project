@@ -1139,6 +1139,20 @@ footer .follow i:hover, footer a:hover {
     padding: 8px 20px;
 }
 
+#form h3 {
+    color: #000;
+    padding-top: 40px;
+}
+
+#form button {
+    background-color: rgb(82, 154, 82);
+    margin-top: 8px;
+    color: white;
+    border-radius: 3px;
+    border: none;
+    padding: 8px 20px;
+}
+
 #subtotal{
     width: 50%;
     margin-bottom: 30px;
@@ -1163,6 +1177,15 @@ footer .follow i:hover, footer a:hover {
     background-color: rgb(82, 154, 82);
     color: white;
     padding: 8px 20px;
+}
+
+#subtotal button {
+    background-color: rgb(82, 154, 82);
+    margin-top: 8px;
+    color: white;
+    border-radius: 3px;
+    border: none;
+    padding: 8px 20px;
 }
 
 
